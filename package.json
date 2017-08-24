@@ -1,0 +1,19 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "TODO Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sowmya1711/To-Do-Application.git"
+  },
+  "author": "sowmya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sowmya1711/To-Do-Application/issues"
+  },
+  "homepage": "https://github.com/Sowmya1711/To-Do-Application#readme"
+}
