@@ -1,3 +1,30 @@
 #image{
 	height:50px;
+	margin-top: 10px;
+	float: left;
 }
+h3{
+	margin-left: 120px;
+}
+#newtext{
+	/*margin-left: 315px;*/
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.done{
+	margin-left: 315px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+/*#left{
+	background-color: rgba(128, 128, 128, 0.37);
+    margin-left: 200px;
+    margin-top: 10px;
+    border-style: groove;
+}
+#right{
+	background-color: rgba(128, 128, 128, 0.37);
+    margin-left: 420px;
+    margin-top: -60px;
+    border-style: groove;
+}*/
