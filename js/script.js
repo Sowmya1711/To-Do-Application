@@ -21,14 +21,7 @@ $("#checkAll").click(function(){
 
 //create todo
 $("#newtext").on('keypress',function (e) {
-      /*e.preventDefault
-      if (e.which == 13) {
-           if($(this).val() != ''){
-           var todo = $(this).val();
-            createTodo(todo); 
-            countTodos();
-           }else{
-               // some validation
-           }
-      }*/
+     
+    countTodos();
+          
 });
