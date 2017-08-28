@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/script.js"> </script>
+  
 </head>
 <body>
 
@@ -16,42 +16,23 @@
   
   <div class="row">
     <div class="col-sm-2"  id ="left" >
-    <!-- To do is about to take note of the reminding thing that has to occur in the specific time -->
     </div>
 
     <div class="col-sm-8" id="middle">
     <img src="images/one.jpg" id="image" /> 
     <h3> TODOS</h3>
-      <div class ="container-well">
-        <input type="text" id="newtext" placeholder="Add your todo">
+      <div class ="container-well" style="background-color: lavender;">
+        <input type="text" id="todoTextBox" placeholder="Add your todo" onkeypress="handle(event)">
           <ul id="todoList">
           </ul>
-
-
+          <script type="text/javascript" src="js/script.js"> </script>
       </div>
     </div>
-
     <div class="col-sm-2" id="right">
-    <!-- To do is about to take note of the reminding thing that has to occur in the specific time -->
     </div>
-
   </div>
 </div>
-
-<!-- <div class ="container-well">
-  <input type="text" id="newtext" placeholder="Add your todo">
-  <ul id="todoList">
-  </ul>
-</div> -->
 </body>
 </html>
 
 
-<ul id="sortable" class="list-unstyled">
-  <li class="ui-state-default">
-    <div class="checkbox">
-      <!-- <label>
-        <input type="checkbox" value="" />Take out the trash</label> -->
-    </div>
-  </li>
-</ul>

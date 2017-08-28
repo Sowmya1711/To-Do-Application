@@ -6,7 +6,7 @@
 h3{
 	margin-left: 120px;
 }
-#newtext{
+#todoTextBox{
 	/*margin-left: 315px;*/
     margin-top: 25px;
     margin-bottom: 20px;
@@ -15,6 +15,9 @@ h3{
 	margin-left: 315px;
     margin-top: 25px;
     margin-bottom: 20px;
+}
+.container-well{
+	background-color: lavender;
 }
 /*#left{
 	background-color: rgba(128, 128, 128, 0.37);
