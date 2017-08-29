@@ -17,10 +17,10 @@ $('#todoTextBox').keypress(function (event) {
     //display data while enter key pressed
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if (keycode == '13') { // keycode for enter
-        console.log('You pressed "enter key" in textbox');
+        //console.log('You pressed "enter key" in textbox');
         if ($(this).val() != '') {
             var todo = $(this).val();
-            console.log(todo);
+            //console.log(todo);
             createTodo(todo);
         } else {
 
@@ -28,13 +28,18 @@ $('#todoTextBox').keypress(function (event) {
     }
 });
 //To create todo
-function createTodo(text) {
+function createTodo(text) {	
+	$.ajax({
+  	type: 'POST',
+  	url: 'https://jsonplaceholder.typicode.com/todos',
+  	data: {title: text, completed: false},
+  	success: function(todoList) {
+    console.log("added!", todoList); //the new item is returned with an ID
+  }
+});
     var markup = '<li><input type="checkbox" id="mycheckbox" class="done"/>' + text + '<span class="glyphicon glyphicon-pencil"></span></li>';
     $('#todoList').prepend(markup);
     $("#todoTextBox").val('');
 }
 
-/*var option = {trigger : $("input.btn_edit"), action : "click"};
-$("span#edit").editable(option, function(e){
-  alert(e.value);
-});*/
+
