@@ -5,12 +5,7 @@ var API_KEY ="https://jsonplaceholder.typicode.com/todos";
     $.getJSON(API_KEY).then(function (data) {
     	var result = { target:data};
     	var template = _.template( $("#tpl").text() );
-    	$("#middle").html(template(result));
-    	//create checkbox for api list and add text in the begining using prepend
-            //$("#todoList").prepend('<li><input type="checkbox" id="mycheckbox" class="done"/> '+ value.title + '<span class="glyphicon glyphicon-pencil"></span></li>');
-            //completed task from api is marked in checkbox
-           //$("#mycheckbox").prop('checked', value.completed);
-      //});
+    	$("#middle").html(template(result));	
     });
 })(jQuery);
 
@@ -43,10 +38,6 @@ function createTodo(text) {
     $('#todoList').prepend(markup);
     $("#todoTextBox").val('');
 }
-
-
-/*
-
 
 
 

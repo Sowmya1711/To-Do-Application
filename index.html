@@ -20,12 +20,16 @@
     <script type="text/template" id="tpl">
         <img src="images/one.jpg" id="image" /> 
         <h3> TODOS</h3>
-        <input type="text" id="todoTextBox" placeholder="Add your todo" >
-        <ul id="todoList">
-        </ul>
-        <% _.each(target,function(value){ %>
-        <li> <input type ="checkbox" id="mycheckbox"> <%= value.title %></li>
-        <%});%>
+            <input type="text" id="todoTextBox" placeholder="Add your todo" >
+            <ul id="todoList">
+            </ul>
+                <% _.each(target,function(value){ %>
+                <li>  <%= value.title %></li>
+                <% if(value.completed == true) { %>
+                <input type ="checkbox" id="mycheckbox" , checked>
+                <% } else { %>
+                <% } %>
+                <%});%>
     </script>
     
         <script type="text/javascript" src="js/script.js"> </script>
