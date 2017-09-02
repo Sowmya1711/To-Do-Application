@@ -24,12 +24,31 @@
             <ul id="todoList">
             </ul>
                 <% _.each(target,function(value){ %>
-                <li>  <%= value.title %></li>
+                <li>  <%= value.title %> </li>
                 <% if(value.completed == true) { %>
-                <input type ="checkbox" id="mycheckbox" , checked>
+                <input type ="checkbox" id="mycheckbox" checked>
                 <% } else { %>
+                <input type ="checkbox" id="mycheckbox">
                 <% } %>
                 <%});%>
+        
+        <script> 
+            $('#todoTextBox').keypress(function (event) {
+            event.stopPropagation(); //prevent the other events 
+            //display data while enter key pressed
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') { // keycode for enter
+              //console.log('You pressed "enter key" in textbox');
+            if ($(this).val() != '') {
+            var todo = $(this).val();
+                //console.log(todo);
+                createTodo(todo);
+            } else {
+
+                 }
+            }
+        });
+        </script>        
     </script>
     
         <script type="text/javascript" src="js/script.js"> </script>
