@@ -1,9 +1,10 @@
 var API_KEY ="https://jsonplaceholder.typicode.com/todos";
 var POST_URL="http://192.168.1.29:1337/todos";
+var DESC="http://192.168.1.29:1337/todos?sort=id+desc";
 
 //To display API values
 (function ($) {
-    $.getJSON(POST_URL).then(function (data) {
+    $.getJSON(DESC).then(function (data) {
     	var result = { target:data};
     	var template = _.template( $("#tpl").text() );
     	$("#middle").html(template(result));	
@@ -11,36 +12,24 @@ var POST_URL="http://192.168.1.29:1337/todos";
 })(jQuery);
 
 
-/* $('#todoTextBox').keypress(function (event) {
-    event.stopPropagation(); //prevent the other events 
-    //display data while enter key pressed
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-    if (keycode == '13') { // keycode for enter
-    //console.log('You pressed "enter key" in textbox');
-    if ($(this).val() != '') {
-    var todo = $(this).val();
-    //console.log(todo);
-    createTodo(todo);
-    } else {
-    }
-    }
-    });*/
-
-
 //To create todo
 function createTodo(text) {	
-	var todo = $('#todoTextBox').val();
-	console.log("POST_URL");
-	console.log(POST_URL);
+	var toDo = $('#todoTextBox').val();
+	//console.log("POST_URL");
+	//console.log(POST_URL);
 	$.ajax('http://192.168.1.29:1337/todos', {
-  method: 'POST',
-  data: {
-    title: 'hai',
-    completed: 1
-  }
-}).then(function(data) {
-  console.log(data);
-});
+  	method: 'POST',
+  	data:{
+    title:toDo,
+    completed:false,
+    userID:1
+  },
+  	error:function(e){
+  		console.log(e);
+  	},
+  	dataType:"json",
+  	
+  });
 
    var markup = '<li><input type="checkbox" id="mycheckbox" class="done"/>' + text + '</li>';
     $('#todoList').prepend(markup);
