@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+<<<<<<< HEAD
   <title>TODO</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +12,21 @@
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+=======
+    <title>TODO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+>>>>>>> 566414b45d2b30f96b051f47c325ccf3c1a32862
 
 </head>
+
 <body>
+<<<<<<< HEAD
 <div class="container well" id="headerTest">  
   <div class="row">
     <div class="col-sm-2"  id ="left"> </div> 
@@ -27,6 +41,20 @@
             <ul id="todoList">
             </ul>
                  <% _.each(target,function(value){ %>
+=======
+    <div class="container well" id="headerTest">
+        <div class="row">
+            <div class="col-sm-2" id="left"> </div>
+            <div class="col-sm-8" id="middle">
+
+                <script type="text/template" id="tpl">
+                    <img src="images/one.jpg" id="image" />
+                    <h3> TODOS</h3>
+                    <input type="text" id="todoTextBox" placeholder="Add your todo">
+                    <ul id="todoList">
+                    </ul>
+                    <% _.each(target,function(value){ %>
+>>>>>>> 566414b45d2b30f96b051f47c325ccf3c1a32862
                         <li>
                             <% if(value.completed == true) { %>
                                 <input type="checkbox" id="mycheckbox" checked>
@@ -36,9 +64,15 @@
                                         <%= value.title %>
                         </li>
                         <%});%>
+<<<<<<< HEAD
         
         <script> 
             $('#todoTextBox').keypress(function (event) {
+=======
+
+                            <script>
+                                $('#todoTextBox').keypress(function (event) {
+>>>>>>> 566414b45d2b30f96b051f47c325ccf3c1a32862
             event.stopPropagation(); //prevent the other events 
             var keycode = (event.keyCode ? event.keyCode : event.which);
             if (keycode == '13') { // keycode for enter
@@ -52,6 +86,7 @@
                  }
             }
         });
+<<<<<<< HEAD
 
         </script>        
     </script>
@@ -61,8 +96,18 @@
   </div>
 </div>
 <script type="text/javascript" src="js/script.js"> </script>
+=======
+                            </script>
+                </script>
+
+                <script type="text/javascript" src="js/script.js">
+
+                </script>
+            </div>
+            <div class="col-sm-2" id="right"> </div>
+        </div>
+    </div>
+>>>>>>> 566414b45d2b30f96b051f47c325ccf3c1a32862
 </body>
+
 </html>
-
-
-   
