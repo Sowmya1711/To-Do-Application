@@ -32,11 +32,11 @@ function createTodo(text) {
 	var todo = $('#todoTextBox').val();
 	console.log("POST_URL");
 	console.log(POST_URL);
-	$.ajax('http://jsonplaceholder.typicode.com/posts', {
+	$.ajax('http://192.168.1.29:1337/todos', {
   method: 'POST',
   data: {
-    title: 'foo',
-    userId: 1
+    title: 'hai',
+    completed: 1
   }
 }).then(function(data) {
   console.log(data);
