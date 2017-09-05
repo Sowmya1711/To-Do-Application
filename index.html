@@ -23,16 +23,16 @@
             <input type="text" id="todoTextBox" placeholder="Add your todo" >
             <ul id="todoList">
             </ul>
-                 <% _.each(target,function(value){ %>
-                        <li>
-                            <% if(value.completed == true) { %>
-                                <input type="checkbox" id="mycheckbox" checked>
-                                <% } else { %>
-                                    <input type="checkbox" id="mycheckbox">
-                                    <% } %>
-                                        <%= value.title %>
-                        </li>
-                        <%});%>
+                <% _.each(target,function(value){ %>
+                    <li>
+                        <% if(value.completed == true) { %>
+                            <input type="checkbox" id="mycheckbox" class="done" checked>
+                        <% } else { %>
+                            <input type="checkbox" id="mycheckbox" class="done">
+                        <% } %>
+                        <%= value.title %>
+                    </li>
+                <%});%>
         
         <script> 
             $('#todoTextBox').keypress(function (event) {
