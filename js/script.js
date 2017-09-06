@@ -6,11 +6,10 @@ var valFalse = "false";
 
 //To display API values
 (function ($) {
-	console.log('hai');
-    $.getJSON(DESC).then(function (data) {
-    	var result = { target:data};
-    	var template = _.template( $("#tpl").text() );
-    	$("#middle").html(template(result));	
+	$.getJSON(DESC).then(function (data) {
+    var result = { target:data};
+    var template = _.template( $("#tpl").text() );
+    $("#middle").html(template(result));	
     });
 })(jQuery);
 
