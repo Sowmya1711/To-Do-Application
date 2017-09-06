@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>TODO</title>
-  <meta charset="utf-8">
+   <title>TODO</title>
+   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,51 +13,46 @@
 </head>
 
 <body>
-<div class="container well" id="headerTest">  
-  <div class="row">
-    <div class="col-sm-2"  id ="left"> </div> 
-    <div class="col-sm-8" id="middle">   
+   <div class="container well" id="headerTest">
+      <div class="row">
+         <div class="col-sm-2" id="left"> </div>
+         <div class="col-sm-8" id="middle">
 
-    <script type="text/template" id="tpl" >
-        <img src="images/one.jpg" id="image" /> 
-        <h3> TODOS</h3>
-            <input type="text" id="todoTextBox" placeholder="Add your todo" >
-            <ul id="todoList"> </ul>
-                <% _.each(target,function(value){ %>
-                    <li>
-                        <% if(value.completed == true) { %>
-                            <input type="checkbox" class="check" checked value="<%- value.id %>">
+            <script type="text/template" id="tpl">
+               <img src="images/one.jpg" id="image" />
+               <h3> TODOS</h3>
+               <input type="text" id="todoTextBox" placeholder="Add your todo">
+               <ul id="todoList"> </ul>
+               <% _.each(target,function(value){ %>
+                  <li>
+                     <% if(value.completed == true) { %>
+                        <input type="checkbox" class="check" checked value="<%- value.id %>">
                         <% } else { %>
-                            <input type="checkbox" class="check" value="<%- value.id %>">
+                           <input type="checkbox" class="check" value="<%- value.id %>">
                         <% } %>
-                        <%= value.title %>
-                    </li>
-                <%});%>
-
-        <script> 
-            $('#todoTextBox').keypress(function (event) {
-            event.stopPropagation(); //prevent the other events 
-            var keycode = (event.keyCode ? event.keyCode : event.which);
-            if (keycode == '13') { // keycode for enter
-              console.log('You pressed "enter key" in textbox');
-            if ($(this).val() != '') {
-            var todo = $(this).val();
-                createTodo(todo);
-            } 
-            }
-            });
-            updateCheck();
-        </script> 
-
-    </script>  
-      <script type="text/javascript" src="js/script.js"> </script>
- 
-    </div>
-    <div class="col-sm-2" id="right"> </div>
-  </div>
-</div>
+                              <%= value.title %>
+                  </li>
+                  <%});%>
+                     <script>
+                        $('#todoTextBox').keypress(function (event) {
+                        event.stopPropagation(); //prevent the other events 
+                            var keycode = (event.keyCode ? event.keyCode : event.which);
+                            if (keycode == '13') { // keycode for enter
+                                console.log('You pressed "enter key" in textbox');
+                            if ($(this).val() != '') {
+                                var todo = $(this).val();
+                                    createTodo(todo);
+                            } 
+                            }
+                        });
+                                updateCheck();
+                     </script>
+            </script>
+            <script type="text/javascript" src="js/script.js">  </script>
+         </div>
+         <div class="col-sm-2" id="right"> </div>
+      </div>
+   </div>
 </body>
+
 </html>
-
-
-   
