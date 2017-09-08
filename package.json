@@ -1,7 +1,7 @@
 {
   "name": "todo",
   "version": "1.0.0",
-  "description": "TODO Application",
+  "description": "test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Sowmya1711/To-Do-Application/issues"
   },
-  "homepage": "https://github.com/Sowmya1711/To-Do-Application#readme"
+  "homepage": "https://github.com/Sowmya1711/To-Do-Application#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  }
 }

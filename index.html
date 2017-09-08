@@ -36,11 +36,11 @@
                      <script>
                         $('#todoTextBox').keypress(function (event) {
                         event.stopPropagation(); //prevent the other events 
-                            var keycode = (event.keyCode ? event.keyCode : event.which);
+                            let keycode = (event.keyCode ? event.keyCode : event.which);
                             if (keycode == '13') { // keycode for enter
                                 console.log('You pressed "enter key" in textbox');
                             if ($(this).val() != '') {
-                                var todo = $(this).val();
+                                let todo = $(this).val();
                                     createTodo(todo);
                             } 
                             }
