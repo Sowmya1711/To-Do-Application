@@ -4,7 +4,7 @@ let DESC = "http://192.168.1.29:1337/todos?sort=id+desc";
 let valTrue = "true";
 let valFalse = "false";
 
-//To display API values
+//To display API values 
 (function ($) {
     $.getJSON(DESC).then(function (data) {
         let result = { target: data };
