@@ -6,12 +6,11 @@ class home{
         $.getJSON(DESC).then(function (data) {
             let result = { target: data };
             let template = _.template($("#tpl").text());
-            $("#middle").html(template(result));
+                $("#middle").html(template(result));
         });
     }  
-
     createTodo(text){
-            let toDo = $('#todoTextBox').val();
+        let toDo = $('#todoTextBox').val();
             $.ajax(POST_URL, {
                 method: 'POST',
                 data: {
@@ -27,12 +26,12 @@ class home{
             let markup = '<li><input type="checkbox" id="mycheckbox" class="done" onchange="uplChk()" />' + text + '</li>';
             $('#todoList').prepend(markup);
             //this.maintodo();
-            //this.todoList;
+            this.todoList;
             $("#todoTextBox").val('');                    
     }
     updateCheck(){
-            $('input[type="checkbox"]').change(function () {
-                let checked = false;
+        $('input[type="checkbox"]').change(function () {
+            let checked = false;
                 if ($(this).prop("checked") == true) {
                     checked = true;
                 }
@@ -40,15 +39,15 @@ class home{
                     checked = false;
                 }
                 createCheck($(this).prop("value"), checked);
-            });
-        }
+        });
+    }
    createCheck(id, checked){
-                let PUT_LAST = "?completed=";
-                let PUT_URLL = POST_URL + id;
-                $.ajax(PUT_URLL, {
-                    method: 'PUT',
+        let PUT_LAST = "?completed=";
+        let PUT_URLL = POST_URL + id;
+            $.ajax(PUT_URLL, {
+                method: 'PUT',
                     data: {
-                        'completed': checked
+                    'completed': checked
                     },
                     success: function () {
                         alert("Changed");
@@ -58,7 +57,7 @@ class home{
                     },
                     dataType: "json",
             
-                });
+            });
     }
 }
 

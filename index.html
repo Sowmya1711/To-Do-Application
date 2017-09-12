@@ -22,7 +22,7 @@
                <img src="images/one.jpg" id="image" />
                <h3> TODOS</h3>
                <input type="text" id="todoTextBox" placeholder="Add your todo">
-               <ul id="todoList"> </ul>
+               <ul id="todoList"> 
                <% _.each(target,function(value){ %>
                   <li>
                      <% if(value.completed == true) { %>
@@ -33,6 +33,7 @@
                               <%= value.title %>
                   </li>
                   <%});%>
+                </ul>
                     <script>               
                         $('#todoTextBox').keypress(function (event) {
                                 event.stopPropagation(); //prevent the other events 

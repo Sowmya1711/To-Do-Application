@@ -40,7 +40,7 @@ var home = function () {
             var markup = '<li><input type="checkbox" id="mycheckbox" class="done" onchange="uplChk()" />' + text + '</li>';
             $('#todoList').prepend(markup);
             //this.maintodo();
-            //this.todoList;
+            this.todoList;
             $("#todoTextBox").val('');
         }
     }, {
