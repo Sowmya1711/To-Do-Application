@@ -22,66 +22,59 @@ var home = function () {
             });
         }
     }, {
-        key: "create",
-        value: function create() {
-            function createTodo(text) {
-                var toDo = $('#todoTextBox').val();
-                $.ajax(POST_URL, {
-                    method: 'POST',
-                    data: {
-                        title: toDo,
-                        completed: false,
-                        userID: 1
-                    },
-                    error: function error(e) {
-                        console.log(e);
-                    },
-                    dataType: "json"
+        key: "createTodo",
+        value: function createTodo(text) {
+            var toDo = $('#todoTextBox').val();
+            $.ajax(POST_URL, {
+                method: 'POST',
+                data: {
+                    title: toDo,
+                    completed: false,
+                    userID: 1
+                },
+                error: function error(e) {
+                    console.log(e);
+                },
+                dataType: "json"
 
-                });
+            });
 
-                var markup = '<li><input type="checkbox" id="mycheckbox" class="done" onchange="uplChk()" />' + text + '</li>';
-                $('#todoList').prepend(markup);
-                $("#todoTextBox").val('');
-            }
+            var markup = '<li><input type="checkbox" id="mycheckbox" class="done" onchange="uplChk()" />' + text + '</li>';
+            $('#todoList').prepend(markup);
+            $("#todoTextBox").val('');
         }
     }, {
-        key: "update",
-        value: function update() {
-            function updateCheck() {
-                $('input[type="checkbox"]').change(function () {
-                    var checked = false;
-                    if ($(this).prop("checked") == true) {
-                        checked = true;
-                    } else if ($(this).prop("checked") == false) {
-                        checked = false;
-                    }
-                    createCheck($(this).prop("value"), checked);
-                });
-            };
+        key: "updateCheck",
+        value: function updateCheck() {
+            $('input[type="checkbox"]').change(function () {
+                var checked = false;
+                if ($(this).prop("checked") == true) {
+                    checked = true;
+                } else if ($(this).prop("checked") == false) {
+                    checked = false;
+                }
+                createCheck($(this).prop("value"), checked);
+            });
         }
     }, {
-        key: "check",
-        value: function check() {
-            function createCheck(id, checked) {
+        key: "createCheck",
+        value: function createCheck(id, checked) {
+            var PUT_LAST = "?completed=";
+            var PUT_URLL = POST_URL + id;
+            $.ajax(PUT_URLL, {
+                method: 'PUT',
+                data: {
+                    'completed': checked
+                },
+                success: function success() {
+                    alert("Changed");
+                },
+                error: function error(e) {
+                    console.log(e);
+                },
+                dataType: "json"
 
-                var PUT_LAST = "?completed=";
-                var PUT_URLL = POST_URL + id;
-                $.ajax(PUT_URLL, {
-                    method: 'PUT',
-                    data: {
-                        'completed': checked
-                    },
-                    success: function success() {
-                        alert("Changed");
-                    },
-                    error: function error(e) {
-                        console.log(e);
-                    },
-                    dataType: "json"
-
-                });
-            }
+            });
         }
     }]);
 
@@ -90,6 +83,12 @@ var home = function () {
 
 var obj = new home();
 obj.maintodo();
-obj.create();
-obj.update();
-obj.check();
+function createTodo(text) {
+    obj.createTodo(text);
+}
+function updateCheck() {
+    obj.updateCheck();
+}
+function createCheck(id, checked) {
+    obj.createCheck(id, checked);
+}

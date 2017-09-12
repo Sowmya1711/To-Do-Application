@@ -2,15 +2,15 @@ const POST_URL = "http://192.168.1.29:1337/todos/";
 const DESC = "http://192.168.1.29:1337/todos?sort=id+desc";
 
 class home{
-     maintodo(){
+    maintodo(){
         $.getJSON(DESC).then(function (data) {
             let result = { target: data };
             let template = _.template($("#tpl").text());
             $("#middle").html(template(result));
         });
     }  
-    create(){
-        function createTodo(text) {
+
+    createTodo(text){
             let toDo = $('#todoTextBox').val();
             $.ajax(POST_URL, {
                 method: 'POST',
@@ -28,12 +28,9 @@ class home{
         
             let markup = '<li><input type="checkbox" id="mycheckbox" class="done" onchange="uplChk()" />' + text + '</li>';
             $('#todoList').prepend(markup);
-            $("#todoTextBox").val('');
-        }
-        
+            $("#todoTextBox").val('');        
     }
-    update(){
-        function updateCheck() {
+    updateCheck(){
             $('input[type="checkbox"]').change(function () {
                 let checked = false;
                 if ($(this).prop("checked") == true) {
@@ -44,11 +41,8 @@ class home{
                 }
                 createCheck($(this).prop("value"), checked);
             });
-        };
-    }
-    check(){
-        function createCheck(id, checked) {
-            
+        }
+   createCheck(id, checked){
                 let PUT_LAST = "?completed=";
                 let PUT_URLL = POST_URL + id;
                 $.ajax(PUT_URLL, {
@@ -65,14 +59,17 @@ class home{
                     dataType: "json",
             
                 });
-            }
     }
 }
+
 let obj=new home();
 obj.maintodo();
-obj.create();
-obj.update();
-obj.check();
-
-
-
+function createTodo(text) {
+    obj.createTodo(text);
+}
+function updateCheck(){
+    obj.updateCheck();
+}
+function createCheck(id, checked){
+    obj.createCheck(id, checked);
+}

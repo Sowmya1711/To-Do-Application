@@ -34,18 +34,20 @@
                   </li>
                   <%});%>
                     <script>
+                
                         $('#todoTextBox').keypress(function (event) {
-                        event.stopPropagation(); //prevent the other events 
-                            let keycode = (event.keyCode ? event.keyCode : event.which);
-                            if (keycode == '13') { // keycode for enter
-                                console.log('You pressed "enter key" in textbox');
-                            if ($(this).val() != '') {
-                                let todo = $(this).val();
-                                    createTodo(todo);
-                            } 
-                            }
-                        });
-                                updateCheck();
+                                event.stopPropagation(); //prevent the other events 
+                                    let keycode = (event.keyCode ? event.keyCode : event.which);
+                                        if (keycode == '13') { // keycode for enter
+                                             console.log('You pressed "enter key" in textbox');
+                                        if ($(this).val() != '') {
+                                            let todo = $(this).val();
+                                            createTodo(todo);
+                                            } 
+                                        }
+                        }); 
+                                updateCheck();                                
+                                        
                      </script> 
             </script>
             <script type="text/javascript" src="es5/main.js">  </script>
