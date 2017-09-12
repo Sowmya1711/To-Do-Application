@@ -36,11 +36,11 @@ var home = function () {
                     console.log(e);
                 },
                 dataType: "json"
-
             });
-
             var markup = '<li><input type="checkbox" id="mycheckbox" class="done" onchange="uplChk()" />' + text + '</li>';
             $('#todoList').prepend(markup);
+            //this.maintodo();
+            //this.todoList;
             $("#todoTextBox").val('');
         }
     }, {

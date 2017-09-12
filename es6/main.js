@@ -22,13 +22,13 @@ class home{
                 error: function (e) {
                     console.log(e);
                 },
-                dataType: "json",
-        
-            });
-        
+                dataType: "json",       
+            });        
             let markup = '<li><input type="checkbox" id="mycheckbox" class="done" onchange="uplChk()" />' + text + '</li>';
             $('#todoList').prepend(markup);
-            $("#todoTextBox").val('');        
+            //this.maintodo();
+            //this.todoList;
+            $("#todoTextBox").val('');                    
     }
     updateCheck(){
             $('input[type="checkbox"]').change(function () {
